@@ -1,9 +1,9 @@
-<h1><%= @business.name %></h1>
+<h1><%= @repository.repo_name %></h1>
 
-Address: &nbsp&nbsp
-<%= @business.address %>
+URL: &nbsp&nbsp
+<%= @repository.repo_url %>
 <br><br>
-Phone: &nbsp&nbsp
-<%= @business.phone %>
-
-<%= link_to "Edit #{@business.name}", edit_industry_business_path %>
+Description: &nbsp&nbsp
+<%= @repository.description %>
+<div class="clearfix"></div>
+<%= link_to "Edit #{@repository.repo_name}", edit_category_repository_path %>

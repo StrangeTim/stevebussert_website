@@ -16,10 +16,10 @@
       </tr>
     </thead>
     <tbody>
-      <% @category.repositories.each do |repo| %>
+      <% @category.repositories.each do |repository| %>
         <tr>
 
-          <td><%= link_to repo.repo_name, category_repository_path(@category,repository)%></td>
+          <td><%= link_to repository.repo_name, category_repository_path(@category,repository)%></td>
           <td><%= repository.repo_url %></td>
         </tr>
       <% end %>
@@ -30,4 +30,4 @@
 <% end %>
 
 <br>
-<p><%= link_to "Add Repo", new_category_repository_path(@category) %></p>
+<p><%= link_to "Add Repository", new_category_repository_path(@category) %></p>

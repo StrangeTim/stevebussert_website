@@ -14,12 +14,12 @@
 To create this app on your own system follow the prompts below
 * Start Postgres
 * Run Terminal Commands
-    `$ git clone https://github.com/StrangeTim/stevebussert_website.git
-    $ cd stevebussert_website
-    $ bundler install
-    $ rake db:create
-    $ rake db:migrate
-    $ rails s`
+    `$ git clone https://github.com/StrangeTim/stevebussert_website.git`
+    `$ cd stevebussert_website`
+    `$ bundler install`
+    `$ rake db:create`
+    `$ rake db:migrate`
+    `$ rails s`
 * Open a browser window and navigate to localhost:3000
 
 #### Testing:

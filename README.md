@@ -14,17 +14,17 @@
 To create this app on your own system follow the prompts below
 * Start Postgres
 * Run Terminal Commands
-    $ git clone https://github.com/StrangeTim/stevebussert_website.git
+    `$ git clone https://github.com/StrangeTim/stevebussert_website.git
     $ cd stevebussert_website
     $ bundler install
     $ rake db:create
     $ rake db:migrate
-    $ rails s
+    $ rails s`
 * Open a browser window and navigate to localhost:3000
 
 #### Testing:
 This app uses rspec and cabybara for unit and integration testing.
-To see the results of these tests follow the Configuration Instructions above except for running the rails server.  Then run terminal command:  '$ rspec'
+To see the results of these tests follow the Configuration Instructions above except for running the rails server.  Then run terminal command:  `$ rspec`
 
 
 #### Copyright and License

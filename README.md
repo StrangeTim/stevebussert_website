@@ -2,6 +2,8 @@
 ## SteveBussert.com
 
 ## This is an evolving project.
+Final purpose is a functioning portfolio page for projects made by or contributed to by Steven Bussert
+App is deployed on host Heroku at....
 
 
 #### Requirements:
@@ -21,12 +23,15 @@ To create this app on your own system follow the prompts below
     * `$ rake db:create`
     * `$ rake db:migrate`
     * `$ rails s`
-    
+
 * Open a browser window and navigate to localhost:3000
+
+* For full designed functionality a first user with username: anonymous needs seeded or created and primary user must be granted admin functionality after creation with direct database SQL commands.
 
 #### Testing:
 This app uses rspec and cabybara for unit and integration testing.
 To see the results of these tests follow the Configuration Instructions above except for running the rails server.  Then run terminal command:  `$ rspec`
+Test coverage of the application can be viewed by opening the SimpleCov report in a browser.  `stevebussert_website/coverage/index.html`
 
 
 #### Copyright and License

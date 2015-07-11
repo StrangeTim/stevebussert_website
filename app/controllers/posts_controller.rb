@@ -8,9 +8,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    if current_user
+    if current_user.admin?
       @user = User.find(current_user.id)
-      @post = @user.posts.new(post_params)
+      @post = Post.new(post_params)
       # @post = post.new(post_params)
       # @post[:user_id] = current_user.id
       if @post.save
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:text)
+    params.require(:post).permit(:subject, :body)
   end
 
 end

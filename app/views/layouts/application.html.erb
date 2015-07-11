@@ -17,23 +17,24 @@
   <div class="container">
     <nav class="navbar navbar-default navbar-fixed-top">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Home", '/' %></li>
-        <li><%= link_to "Categories", categories_path %></li>
+        <li><%= link_to "Home", '/', class: 'stroke' %></li>
+        <li><%= link_to "Code", categories_path, class: 'stroke' %> </li>
+        <li><%= link_to "Steve", posts_path, class: 'stroke' %> </li>
         <% if user_signed_in? %>
           <li class="pull-right">
             <span>
               <% if current_user.admin? %>
-                Welcome admin, <i><%= current_user.username %></i>! |
+                <span class='stroke'> Welcome admin, <i><%= current_user.username %></i>! | </span>
               <% else %>
-                Welcome <i><%= link_to current_user.username, user_path(current_user) %></i>! |
+                Welcome <i><%= link_to current_user.username, user_path(current_user), class: 'stroke' %></i>! |
               <% end %>
 
-              <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'stroke' %>
             </span>
           </li>
         <% else %>
-          <li class="pull-right"><%= link_to "Sign In", new_user_session_path %></li>
-          <li class="pull-right"><%= link_to "Signup",  new_user_registration_path %></li>
+          <li class="pull-right"><%= link_to "Sign In", new_user_session_path, class: 'stroke' %></li>
+          <li class="pull-right"><%= link_to "Signup",  new_user_registration_path, class: 'stroke' %></li>
         <% end %>
       </ul>
     </nav>

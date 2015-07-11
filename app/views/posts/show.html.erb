@@ -1,0 +1,40 @@
+
+<h3><%= @post.subject %> </h3>
+<div>
+<% if current_user.try(:admin?) %>
+  <%= link_to "Edit #{@post.subject}", edit_post_path(@post) %> |
+  <%= link_to "Delete #{@post.subject}", post_path(@post),
+                                  :data => {:confirm => "Confirm?",
+                                  :method => "delete"} %>
+<% end %>
+<div>
+<br>
+<%= @post.body %>
+<br>
+<hr>
+<% if @post_comments.any? %>
+  <div class='chat'>
+    <h3>Comments about this post:</h3>
+    <ul class="list-unstyled">
+      <% @post_comments.each do |comment| %>
+        <li><span class="comment-header"> <%= comment.username %> says: </span>
+          <div class="bubble left">
+            <%= comment.text %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <h3>There are no comments on this post yet.</h3>
+<% end %>
+
+<br>
+<span class='btn btn-success add_comment'> Comment? </span>
+<div class='add_comment_form'>
+  <%= bootstrap_form_for([@post, @comment]) do |f| %>
+    <%= f.text_field :username, placeholder: "anonymous" %>
+    <%= f.text_field :text, placeholder: "say something" %>
+    <%= f.submit %>
+  <% end %>
+</div>

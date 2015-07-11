@@ -6,4 +6,7 @@ URL: &nbsp&nbsp
 Description: &nbsp&nbsp
 <%= @repository.description %>
 <div class="clearfix"></div>
-<%= link_to "Edit #{@repository.repo_name}", edit_category_repository_path %>
+
+<% if current_user.try(:admin?) %>
+  <%= link_to "Edit #{@repository.repo_name}", edit_category_repository_path %>
+<% end %>

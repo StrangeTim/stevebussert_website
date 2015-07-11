@@ -1,9 +1,10 @@
 <h3><%= @category.name %> Related Code</h3>
-
-<%= link_to "Edit #{@category.name}", edit_category_path(@category) %><br>
-<%= link_to "Delete #{@category.name}", category_path(@category),
-                                  :data => {:confirm => "Confirm?",
-                                  :method => "delete"} %>
+<% if current_user.try(:admin?) %>
+  <%= link_to "Edit #{@category.name}", edit_category_path(@category) %><br>
+  <%= link_to "Delete #{@category.name}", category_path(@category),
+                                    :data => {:confirm => "Confirm?",
+                                    :method => "delete"} %>
+<% end %>
 
 <%if @category.repositories.any? %>
   <h3>Repositories in this category:</h3>
@@ -30,4 +31,6 @@
 <% end %>
 
 <br>
-<p><%= link_to "Add Repository", new_category_repository_path(@category) %></p>
+<% if current_user.try(:admin?) %>
+  <p><%= link_to "Add Repository", new_category_repository_path(@category) %></p>
+  <% end %>

@@ -4,7 +4,7 @@
 ## This is an evolving project.
 Final purpose is a functioning portfolio page for projects made by or contributed to by Steven Bussert
 App is deployed on host Heroku at:  [Heroku Deployment] [link1]
-[link1: https://tranquil-harbor-9646.herokuapp.com/
+[link1]: https://tranquil-harbor-9646.herokuapp.com/
 
 
 #### Requirements:

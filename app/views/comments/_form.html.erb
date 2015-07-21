@@ -1,0 +1,7 @@
+<div id='add_comment_form'>
+  <%= bootstrap_form_for [@post, @comment], remote: true do |f| %>
+    <%= f.text_field :username, placeholder: "anonymous" %>
+    <%= f.text_field :text, placeholder: "say something" %>
+    <%= f.submit %>
+  <% end %>
+</div>

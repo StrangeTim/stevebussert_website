@@ -1,15 +1,19 @@
 <h1>Index of Posts</h1>
-
+<% if current_user.try(:admin?) %>
+  <%= link_to 'Add a New Post', new_post_path %>
+<% end %>
 <% if @posts.any? %>
-  <ul>
-    <% @posts.each do |post| %>
-      <li><%= link_to post.subject, post_path(post) %></li>
-    <% end %>
-  </ul>
+  <div class="all_posts">
+    <ul>
+      <% @posts.each do |post| %>
+        <div class="post" id="<%=post.id%>">
+          <li><%= link_to post.subject, post_path(post), remote: true %></li>
+        <div>
+      <% end %>
+    </ul>
+  </div>
 <% else %>
   <p><h3>No posts made yet. Steve must be boring.</h3></p>
 <% end %>
 
-<% if current_user.try(:admin?) %>
-  <%= link_to 'Add a New Post', new_post_path %>
-<% end %>
+<div id="current_post"><hr></div>

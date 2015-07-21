@@ -27,4 +27,5 @@ $(function() {
       $('.add_comment').text("Hide Form");
     }
   });
+
 });

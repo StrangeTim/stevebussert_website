@@ -16,10 +16,11 @@
 
   <div class="container">
     <nav class="navbar navbar-default navbar-fixed-top">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Home", '/', class: 'stroke' %></li>
-        <li><%= link_to "Code", categories_path, class: 'stroke' %> </li>
-        <li><%= link_to "Steve", posts_path, class: 'stroke' %> </li>
+      <ul class="nav navbar-nav stroke">
+        <li><%= link_to "Home", '/' %></li>
+        <li><%= link_to "Code", categories_path %> </li>
+        <li><%= link_to "Thoughts", posts_path %> </li>
+        <li><%= link_to "References", references_path %> </li>
         <% if user_signed_in? %>
           <li class="pull-right">
             <span>

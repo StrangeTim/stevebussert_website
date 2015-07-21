@@ -14,7 +14,10 @@ class PostsController < ApplicationController
       # @post = post.new(post_params)
       # @post[:user_id] = current_user.id
       if @post.save
-        redirect_to posts_path
+        respond_to do |format|
+          format.html {redirect_to posts_path}
+          format.js
+        end
       else
         redirect_to :back
       end
@@ -28,6 +31,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @post_comments = @post.comments
+    respond_to do |format|
+      format.html {redirect_to '/posts'}
+      format.js
+    end
   end
 
   private

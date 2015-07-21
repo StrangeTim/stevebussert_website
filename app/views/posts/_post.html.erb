@@ -1,0 +1,30 @@
+<div id="displayed_post">
+  <div class='chat'>
+    <h3><%= @post.subject %> </h3>
+    <div>
+      <% if current_user.try(:admin?) %>
+        <%= link_to "Edit", edit_post_path(@post), class: "btn btn-warning" %>
+        <%= link_to "Delete", post_path(@post), class: "btn btn-danger",
+                               :data => {:confirm => "Confirm?",
+                               :method => "delete"} %>
+        <% end %>
+    </div>
+    <br>
+
+    <%= @post.body %>
+    <br>
+    <hr>
+    <%= link_to "Comment?", new_post_comment_path(@post), id: "new_comment_link", class: "btn btn-success", remote: true %>
+    <br>
+
+    <h3>Comments about this post:</h3>
+    <div id="post<%=@post.id%>comments">
+      <ul class="list-unstyled">
+        <% @post_comments.each do |comment| %>
+          <li> <%= render comment %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+</div>

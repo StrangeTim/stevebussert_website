@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
-    binding.pry
     if current_user
       @comment[:username] = current_user.username
     elsif params[:comment][:username] == "" || params[:comment][:username] == nil
@@ -18,7 +17,10 @@ class CommentsController < ApplicationController
     end
 
     if @comment.save
-      redirect_to post_path(@post, @comment)
+      respond_to do |format|
+        format.html {redirect to '/posts'}
+        format.js
+      end
     else
       redirect_to :back
     end

@@ -1,0 +1,21 @@
+<h1>Personal and Professional References</h1>
+
+<% if current_user.try(:admin?) %>
+  <%= link_to 'Add Reference', new_reference_path, id: "new_reference_link", class: "btn btn-success", remote: true %>
+<% end %>
+
+<% if @references.any? %>
+  <table class="table table-striped table-hover" id="references_table">
+    <thead>
+      <tr>
+        <th>Name </th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @references.each do |reference| %>
+        <%= render reference %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

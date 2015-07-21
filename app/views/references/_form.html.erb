@@ -1,0 +1,7 @@
+<div id='add_reference_form'>
+  <%= bootstrap_form_for @reference, remote: true do |f| %>
+  <%= f.text_field :name, placeholder: "John Smith" %>
+  <%= f.text_field :phone, placeholder: "(503)450-9938" %>
+  <%= f.submit %>
+  <% end %>
+</div>

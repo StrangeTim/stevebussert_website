@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   get "/admin" => "admins#index", as: 'admin'
   patch "/admin/:id" => "admins#update"
+
+  resources :references, except: [:show, :edit, :update]
 end

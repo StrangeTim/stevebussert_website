@@ -19,13 +19,6 @@
 $(function() {
   $('.flash-wrapper').delay(1500).fadeOut(1500);
 
-  $('.add_comment').click(function() {
-    $('.add_comment_form').toggle();
-    if ( $('.add_comment').text() == "Hide Form") {
-      $('.add_comment').text("Comment?");
-    } else {
-      $('.add_comment').text("Hide Form");
-    }
-  });
+
 
 });

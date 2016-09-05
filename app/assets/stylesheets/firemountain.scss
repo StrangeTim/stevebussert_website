@@ -1,0 +1,86 @@
+.fireMountMock {
+  .header {
+    .hdrRow1 {
+      ul li {list-style-type:none;display:inline;}
+      .right {float:right;margin-left:20px;}
+    }
+
+    .hdrRow2 {
+      .logo {}
+      .slogan {}
+      .helpcart {}
+    }
+
+    .hdrRow3 {
+      .homeBtn {}
+      .searchBar {}
+      .catalog {
+        .redText {color:red;}
+      }
+    }
+
+    .hdrRow4 {
+      ul.mainMenu {
+        li.expandable {
+          list-style-type:none;
+          display:inline;
+
+          &.shopNav {
+            ul.secondExpand {
+              display:none;
+            }
+            &:hover {
+              ul.secondExpand {
+                display:block;
+                li { list-style-type:none;}
+                .subNavHid { display:none;}
+                .beadsNav:hover {
+                  .beadsNav.subNavHid { display:block;}
+                }
+                .jewelNav:hover {
+                  .jewelNav.subNavHid { display:block;}
+                }
+                .stringNav:hover {
+                  .stringNav.subNavHid { display:block;}
+                }
+                .wireNav:hover {
+                  .wireNav.subNavHid { display:block;}
+                }
+                .toolsNav:hover {
+                  .toolsNav.subNavHid { display:block;}
+                }
+                .specNav:hover {
+                  .specNav.subNavHid { display:block;}
+                }
+              }
+            }
+          } //end of shop menu
+
+          &.new {
+
+          }
+
+          &.holiday {
+
+          }
+
+          &.finJewel {
+
+          }
+
+          &.resCen {
+
+          }
+
+          &.sale {
+
+          }
+        }
+      } //end mainMenu
+    } //end hdrRow4
+  } //end header
+
+  .fmmBody {
+
+  } //end fmmBody
+}

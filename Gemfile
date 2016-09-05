@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
 gem 'rails'
 gem 'pg'
 gem 'sass-rails'

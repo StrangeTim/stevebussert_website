@@ -8,4 +8,8 @@ class PagesController < ApplicationController
     render :firemountain
   end
 
+  def fmweb2
+    render :fmweb2
+  end 
+
 end

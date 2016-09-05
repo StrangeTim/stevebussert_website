@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   end
   resources 'user', only: [:show]
 
-  get"/fire-mountain" => "pages#firemountain"
+  get "/fm2" => "pages#fmweb2"
+  get "/fire-mountain" => "pages#firemountain"
   get "/admin" => "admins#index", as: 'admin'
   patch "/admin/:id" => "admins#update"
 
